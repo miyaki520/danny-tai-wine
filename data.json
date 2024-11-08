@@ -1,0 +1,6 @@
+{
+    "title": "Welcome to My Website",
+    "description": "This is a simple static website that loads data from a JSON file.",
+    "items": ["Home", "About", "Contact"]
+  }
+  
