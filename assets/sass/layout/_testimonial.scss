@@ -53,9 +53,10 @@
 			}
 		}
 		.client-designation {
+			color: #800020 !important;
 			font-size: 13px;
 			line-height: 1.4em;
-			color: #6a6a6a;
+			
 			@media (min-width: 768px) {
 				font-size: 14px;
 			}

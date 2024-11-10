@@ -84,7 +84,6 @@ body {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5em;
-  color: #393939;
   position: relative;
 }
 @media only screen and (max-width: 575px) {
@@ -6162,17 +6161,18 @@ a:active {
   }
 }
 .testimonial-item .client-info .client-designation {
-  font-size: 13px;
+  color: #800020 !important;
   line-height: 1.4em;
-  color: #6a6a6a;
 }
 @media (min-width: 768px) {
   .testimonial-item .client-info .client-designation {
+    color: #800020 !important;
     font-size: 14px;
   }
 }
 @media (min-width: 992px) {
   .testimonial-item .client-info .client-designation {
+    color: #800020 !important;
     font-size: 15px;
   }
 }
@@ -8860,7 +8860,7 @@ a:active {
 
 .dot {
   position: absolute;
-  left: 52%; /* Center horizontally */
+  left: 51.5%; /* Center horizontally */
   top: 40%; /* Center vertically */
   transform: translate(-50%, -50%); /* Adjust to keep dot in the center */
   z-index: 1; /* Keeps the dot above other elements */
