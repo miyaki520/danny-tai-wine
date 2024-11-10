@@ -48,7 +48,7 @@ $(function() {
                 // Set the message text.
                 $('#contact_modal').slideUp(300);
                 $('.modal-backdrop').hide();
-                var successMessage = $('form#contact_form').prepend('<p class="success font-white pb-2">Thank you. Your email was sent successfully.</p>');
+                var successMessage = $('form#contact_form').prepend('<p class="success text-white pb-2">Thank you. Your email was sent successfully.</p>');
                 setTimeout(successMessage, 2000);
 
                 // Clear the form.
@@ -63,7 +63,7 @@ $(function() {
                 if (data.responseText !== '') {
                     $('form#contact_form').text(data.responseText);
                 } else {
-                    $('form#contact_form').prepend('<p class="error font-white pb-2">Oops! An error occured and your message could not be sent.</p>');
+                    $('form#contact_form').prepend('<p class="error text-white pb-2">Oops! An error occured and your message could not be sent.</p>');
                 }
             });
         }
