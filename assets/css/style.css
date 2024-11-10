@@ -9003,6 +9003,31 @@ a:active {
   padding-right: 40px !important;
 }
 
+/* Apply flex display to the card container */
+.burg-life-block .row.justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Make all cards the same height */
+.burg-life-block .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Ensure the card body fills remaining space */
+.burg-life-block .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Add a margin or padding to the bottom of the card to align the button */
+.burg-life-block .burg-life-btn {
+  margin-top: auto; /* Push button to the bottom */
+}
 
 /* popup modal styling */
 
