@@ -99,35 +99,3 @@ document
         formStatus.style.color = "red";
       });
   });
-
-document
-  .getElementById("contact_form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Gather form data
-    const formData = {
-      FNAME: e.target.name.value,
-      WHATSAPP: e.target.whatsapp.value,
-      EMAIL: e.target.Email.value,
-      MESSAGE: e.target.message.value,
-    };
-
-    // Send the data to the serverless function
-    fetch("/.netlify/functions/message", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.message === "Successfully subscribed!") {
-          alert("Thank you for contacting us!");
-        } else {
-          alert("There was an issue. Please try again.");
-        }
-      })
-      .catch((error) => console.error("Error:", error));
-  });
