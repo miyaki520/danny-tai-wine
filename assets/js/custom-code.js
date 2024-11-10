@@ -114,7 +114,7 @@ document
     };
 
     // Send the data to the serverless function
-    fetch("/.netlify/functions/message", {
+    fetch("/.netlify/functions/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
