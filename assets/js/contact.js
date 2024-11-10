@@ -10,25 +10,25 @@ $(function() {
         var re = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
         if ($email.val() == '' || !re.test($email.val())){
-            $('#email').parent().append('<span class="error">Please provide valid Email.</span>');
+            $('#email').parent().append('<p class="error text-white">Please provide valid Email.</p>');
             $('#email').addClass('inputError');
             hasError = true;
         }
 
         if($name.val() == '') {
-            $('#name').parent().append('<span class="error">Please provide Your name.</span>');
+            $('#name').parent().append('<p class="error text-white">Please provide Your name.</p>');
             $('#name').addClass('inputError');
             hasError = true;
         }
 
         if($message.val() == '') {
-            $('#message').parent().append('<span class="error">Please enter details About Project.</span>');
+            $('#message').parent().append('<p class="error text-white">Please enter a message.</p>');
             $('#message').addClass('inputError');
             hasError = true;
         }
 
         if($whatsapp.val() == '') {
-            $('#whatsapp').parent().append('<span class="error">Please provide Your Whatsapp Number.</span>');
+            $('#whatsapp').parent().append('<p class="error text-white">Please provide Your Whatsapp Number.</p>');
             $('#whatsapp').addClass('inputError');
             hasError = true;
         }
@@ -48,7 +48,7 @@ $(function() {
                 // Set the message text.
                 $('#contact_modal').slideUp(300);
                 $('.modal-backdrop').hide();
-                var successMessage = $('form#contact_form').prepend('<span class="success font-white pb-2">Thank you. Your email was sent successfully.</span>');
+                var successMessage = $('form#contact_form').prepend('<p class="success font-white pb-2">Thank you. Your email was sent successfully.</p>');
                 setTimeout(successMessage, 2000);
 
                 // Clear the form.
@@ -63,7 +63,7 @@ $(function() {
                 if (data.responseText !== '') {
                     $('form#contact_form').text(data.responseText);
                 } else {
-                    $('form#contact_form').prepend('<span class="error">Oops! An error occured and your message could not be sent.</span>');
+                    $('form#contact_form').prepend('<p class="error font-white pb-2">Oops! An error occured and your message could not be sent.</p>');
                 }
             });
         }
