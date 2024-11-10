@@ -24,7 +24,7 @@ exports.handler = async function (event, context) {
     email_address: email,
     status: "subscribed",
     merge_fields: {
-      FULLNAME: name,
+      FNAME: name,
       WHATSAPP: whatsapp,
     },
   };
