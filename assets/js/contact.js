@@ -52,7 +52,7 @@ $(function() {
                 setTimeout(successMessage, 2000);
 
                 // Clear the form.
-                $('form input[name="email"], form input[name="name"], form textarea[name="message"]').val('');
+                $('form input[name="email"], form input[name="name"], form textarea[name="message"], form input[name="whatsapp"]').val('');
             })
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
