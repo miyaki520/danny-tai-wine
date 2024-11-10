@@ -5618,7 +5618,7 @@ a:active {
   color: #800020;
   font-size: 15px;
   padding-top: 3px;
-  font-weight: 500;
+  /* font-weight: 500; */
   margin-bottom: 0;
   font-family: "Inter", sans-serif;
 }
