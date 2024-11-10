@@ -5,7 +5,8 @@ $(function() {
         var hasError = false;
         var $email = $('form input[name="email'); 
         var $name = $('form input[name="name'); 
-        var $message = $('form textarea[name="message'); 
+        var $message = $('form textarea[name="message');
+        var $whatsapp = $('form input[name="whatsapp'); 
         var re = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
         if ($email.val() == '' || !re.test($email.val())){
@@ -26,6 +27,12 @@ $(function() {
             hasError = true;
         }
 
+        if($whatsapp.val() == '') {
+            $('#whatsapp').parent().append('<span class="error">Please provide Your Whatsapp Number.</span>');
+            $('#whatsapp').addClass('inputError');
+            hasError = true;
+        }
+
         if(!hasError) {
             var url = "./assets/php/contact.php"; 
             $.ajax({
@@ -41,7 +48,7 @@ $(function() {
                 // Set the message text.
                 $('#contact_modal').slideUp(300);
                 $('.modal-backdrop').hide();
-                var successMessage = $('form#contact_form').prepend('<span class="success">Thank you. Your email was sent successfully.</span>');
+                var successMessage = $('form#contact_form').prepend('<span class="success font-white pb-2">Thank you. Your email was sent successfully.</span>');
                 setTimeout(successMessage, 2000);
 
                 // Clear the form.
