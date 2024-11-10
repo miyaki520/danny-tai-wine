@@ -15,9 +15,9 @@ exports.handler = async function (event, context) {
   
     const { name, email, whatsapp } = JSON.parse(event.body);
   
-    const mailchimpApiKey = "93a15174df7035496fe8e252ab406fed-us17"; // Replace with your Mailchimp API key
-    const audienceId = "d5b027300c"; // Replace with your Audience ID
-    const dataCenter = "us17"; // Replace with your Mailchimp data center (e.g., "us1")
+    const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
+    const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
+    const dataCenter = process.env.MAILCHIMP_DATA_CENTER;
   
     const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
   
