@@ -567,13 +567,24 @@
                 </div>
                 <!-- /.section-title -->
                 <div class="contact-form-area">
-                  <form id="contact_form" class="contact-form" action="#">
+                  <form
+                    id="contact_form"
+                    class="contact-form"
+                    action="#"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                  >
+                    <input
+                      type="hidden"
+                      name="form-name"
+                      value="contact_form"
+                    />
                     <div class="row gx-4">
                       <div class="col-12">
                         <div class="form-group">
                           <input
                             id="name"
-                            name="FULLNAME"
+                            name="name"
                             type="text"
                             class="form-control"
                             placeholder="Name*"
@@ -586,7 +597,7 @@
                           <input
                             class="form-control"
                             id="whatsapp"
-                            name="WHATSAPP"
+                            name="whatsapp"
                             type="number"
                             placeholder="Whatsapp No*"
                           />
@@ -597,7 +608,7 @@
                           <input
                             class="form-control"
                             id="Email"
-                            name="EMAIL"
+                            name="email"
                             type="email"
                             placeholder="Email*"
                           />
@@ -608,7 +619,7 @@
                         <div class="form-group">
                           <textarea
                             id="message"
-                            name="MESSAGE"
+                            name="message"
                             class="form-control"
                             rows="4"
                             placeholder="Message"
@@ -623,6 +634,12 @@
                       </div>
                       <!--./ col-lg-6 -->
                     </div>
+                    <p class="hidden">
+                      <label
+                        >Don’t fill this out if you're human:
+                        <input name="bot-field"
+                      /></label>
+                    </p>
                     <!-- /.row -->
                   </form>
                   <!-- /.contact-form -->
