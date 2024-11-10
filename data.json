@@ -1,19 +1,19 @@
 [
   {
     "title": "Sourcing & Distribution",
-    "description": "Delivering premium wines from trusted sources directly to your business",
+    "description": "Delivering premium wines from trusted sources directly to your business.",
     "pdf": "/assets/pdf/sample.pdf",
     "image": "/assets/images/burg_life/image_1.jpg"
   },
   {
     "title": "Dinner & Paring",
-    "description": "Curated wine pairings to elevate your dining experience with perfection",
+    "description": "Curated wine pairings to elevate your dining experience with perfection.",
     "pdf": "/assets/pdf/sample.pdf",
     "image": "/assets/images/burg_life/image_2.jpg"
   },
   {
     "title": "Talk & Masterclass",
-    "description": "In-depth wine knowledge shared through engaging talks and immersive masterclasses",
+    "description": "In-depth wine knowledge shared through engaging talks and immersive masterclasses.",
     "pdf": "/assets/pdf/sample.pdf",
     "image": "/assets/images/burg_life/image_3.jpg"
   }
