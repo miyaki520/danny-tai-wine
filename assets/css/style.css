@@ -5403,6 +5403,7 @@ a:active {
 }
 .about-us-block.about-style-two .fanfact-promo-numbers {
   margin-top: 45px;
+  font-family: "gothic-bold", sans-serif !important;
 }
 @media (min-width: 992px) {
   .about-us-block.about-style-two .fanfact-promo-numbers {
@@ -5585,9 +5586,8 @@ a:active {
 }
 .fanfact-promo-numbers .promo-number .odometer {
   font-size: 40px;
-  font-weight: 800;
+  font-family: "gothic-bold", sans-serif !important;
   line-height: 0.87em;
-  font-family: "gothic", sans-serif !important;
   color: black;
 }
 @media (min-width: 992px) {
@@ -5603,6 +5603,7 @@ a:active {
 @media (min-width: 1400px) {
   .fanfact-promo-numbers .promo-number .odometer {
     font-size: 62px;
+    font-family: "gothic-bold", sans-serif !important;
   }
 }
 .fanfact-promo-numbers .promo-number .promo-title {
