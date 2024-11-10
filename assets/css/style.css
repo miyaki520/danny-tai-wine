@@ -282,6 +282,14 @@ h4 a:hover {
   }
 }
 
+.sub-sub-title {
+  font-size: 18px;
+  font-family: "gothic-bold", sans-serif !important;
+  color: #800020;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+
 /*-------------------------------------------------
     [ ## Others Typography ]
 */
