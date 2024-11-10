@@ -18,7 +18,7 @@ fetch("data.json")
           <div class="card-body">
             <h5 class="card-title century-gothic-bold text-burgundy">${item.title}</h5>
             <p class="card-text">${item.description}</p>
-            <a href="${item.pdf}" class="btn btn-primary" target="_blank">View More</a>
+            <a href="${item.pdf}" class="btn btn-primary burg-life-btn rounded-3" target="_blank">View More</a>
           </div>
         </div>
       `;
