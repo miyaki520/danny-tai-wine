@@ -60,9 +60,11 @@ fetch("data.json")
   document.getElementById("subscribe-form").addEventListener("submit", function (e) {
     e.preventDefault();
   
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const whatsapp = e.target.whatsapp.value;
+    let name = e.target.name.value;
+    let email = e.target.email.value;
+    let whatsapp = e.target.whatsapp.value;
+
+    const modal = document.getElementById("popup-modal");
   
     // Send data to the serverless function
     fetch("/.netlify/functions/subscribe", {
@@ -78,6 +80,12 @@ fetch("data.json")
         if (result.message === "Successfully subscribed!") {
           formStatus.innerHTML = "Thank you for subscribing!";
           formStatus.style.color = "green";
+          // clear the form
+          e.target.name.value = "";
+          e.target.email.value = "";
+          e.target.whatsapp.value = "";
+          // close the form
+          modal.style.display = "none";
         } else {
           formStatus.innerHTML = "An error occurred. Please try again.";
           formStatus.style.color = "red";
