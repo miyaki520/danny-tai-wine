@@ -35,37 +35,38 @@ fetch("data.json")
   })
   .catch((error) => console.error("Error loading JSON:", error));
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Show the modal on page load
+  const modal = document.getElementById("popup-modal");
+  const closeBtn = document.getElementById("close-popup");
 
-  document.addEventListener("DOMContentLoaded", function() {
-    // Show the modal on page load
-    const modal = document.getElementById("popup-modal");
-    const closeBtn = document.getElementById("close-popup");
-  
-    // Display the modal
-    modal.style.display = "block";
-  
-    // Close the modal when clicking on the close button
-    closeBtn.onclick = function() {
+  // Display the modal
+  modal.style.display = "block";
+
+  // Close the modal when clicking on the close button
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Close the modal when clicking outside of the modal content
+  window.onclick = function (event) {
+    if (event.target === modal) {
       modal.style.display = "none";
-    };
-  
-    // Close the modal when clicking outside of the modal content
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-  });
+    }
+  };
+});
 
-  document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+document
+  .getElementById("subscribe-form")
+  .addEventListener("submit", function (e) {
     e.preventDefault();
-  
+
     let name = e.target.name.value;
     let email = e.target.email.value;
     let whatsapp = e.target.whatsapp.value;
 
     const modal = document.getElementById("popup-modal");
-  
+
     // Send data to the serverless function
     fetch("/.netlify/functions/subscribe", {
       method: "POST",
@@ -98,4 +99,35 @@ fetch("data.json")
         formStatus.style.color = "red";
       });
   });
-  
+
+document
+  .getElementById("contact_form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Gather form data
+    const formData = {
+      FNAME: e.target.name.value,
+      WHATSAPP: e.target.whatsapp.value,
+      EMAIL: e.target.Email.value,
+      MESSAGE: e.target.message.value,
+    };
+
+    // Send the data to the serverless function
+    fetch("/.netlify/functions/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.message === "Successfully subscribed!") {
+          alert("Thank you for contacting us!");
+        } else {
+          alert("There was an issue. Please try again.");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  });
