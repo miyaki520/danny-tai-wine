@@ -35,7 +35,7 @@ fetch("data.json")
   })
   .catch((error) => console.error("Error loading JSON:", error));
 
-  
+
   document.addEventListener("DOMContentLoaded", function() {
     // Show the modal on page load
     const modal = document.getElementById("popup-modal");
@@ -55,5 +55,39 @@ fetch("data.json")
         modal.style.display = "none";
       }
     };
+  });
+
+  document.getElementById("subscribe-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+  
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const whatsapp = e.target.whatsapp.value;
+  
+    // Send data to the serverless function
+    fetch("/.netlify/functions/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, whatsapp }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        const formStatus = document.getElementById("form-status");
+        if (result.message === "Successfully subscribed!") {
+          formStatus.innerHTML = "Thank you for subscribing!";
+          formStatus.style.color = "green";
+        } else {
+          formStatus.innerHTML = "An error occurred. Please try again.";
+          formStatus.style.color = "red";
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        const formStatus = document.getElementById("form-status");
+        formStatus.innerHTML = "An error occurred. Please try again.";
+        formStatus.style.color = "red";
+      });
   });
   
