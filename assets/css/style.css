@@ -5763,6 +5763,7 @@ a:active {
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 @media (min-width: 1200px) {
   .social-status .social-profile-list > a {
     font-size: 16px;
@@ -8620,30 +8621,9 @@ a:active {
     margin-top: 135px;
   }
 }
-.site-footer:before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: -130px;
-  background-color: #141414;
-  -webkit-clip-path: polygon(0 100%, 35% 0, 100% 60px, 100% 100%);
-  clip-path: polygon(0 100%, 35% 0, 100% 60px, 100% 100%);
-  height: 130px;
-  width: 100%;
-}
-@media (min-width: 992px) {
-  .site-footer:before {
-    -webkit-clip-path: polygon(0 150px, 49% 0, 100% 90px, 100% 100%, 0 100%);
-    clip-path: polygon(0 150px, 49% 0, 100% 90px, 100% 100%, 0 100%);
-    height: calc(100% + 150px);
-    width: 50%;
-    top: auto;
-    bottom: 0;
-  }
-}
 
 .contact-block {
-  padding-bottom: 80px;
+  padding-top: 80px;
 }
 @media (min-width: 1200px) {
   .contact-block {
@@ -8674,6 +8654,10 @@ a:active {
 }
 .contact-block .contact-form-area {
   position: relative;
+}
+.contact-form-area::placeholder {
+  color: white !important;
+  /* opacity: 0.35; */
 }
 @media (min-width: 992px) {
   .contact-block .contact-form-area {
@@ -8725,7 +8709,7 @@ a:active {
 }
 
 .footer-content-wrapper {
-  padding-bottom: 75px;
+  /* padding-bottom: 75px; */
 }
 @media (min-width: 992px) {
   .footer-content-wrapper {
@@ -8735,19 +8719,20 @@ a:active {
 }
 @media (min-width: 1200px) {
   .footer-content-wrapper {
-    padding-bottom: 95px;
+    /* padding-bottom: 95px; */
     padding-left: 55px;
   }
 }
 @media (min-width: 1400px) {
   .footer-content-wrapper {
     padding-top: 180px;
-    padding-bottom: 95px;
+    /* padding-bottom: 95px; */
     padding-left: 85px;
   }
 }
 .footer-content-wrapper .footer-widget-area {
   margin-bottom: 10px;
+  margin-top:75px;
 }
 @media (min-width: 992px) {
   .footer-content-wrapper .footer-widget-area {
@@ -8819,6 +8804,7 @@ a:active {
 
 .single-contact-info {
   margin-bottom: 25px;
+  /* display: inline-block; */
 }
 @media (min-width: 768px) {
   .single-contact-info {
@@ -8840,8 +8826,8 @@ a:active {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #800020;
-  background-color: #191818;
+  color: white;
+  background-color: #800020;
   border-radius: 50%;
   font-size: 14px;
   margin-bottom: 8px;
@@ -9024,6 +9010,12 @@ a:active {
   justify-content: space-between;
 }
 
+.card-img-top {
+  aspect-ratio: 16 / 9;
+  height: 200px;
+  object-fit: cover; 
+}
+
 /* Add a margin or padding to the bottom of the card to align the button */
 .burg-life-block .burg-life-btn {
   margin-top: auto; /* Push button to the bottom */
@@ -9100,3 +9092,33 @@ a:active {
   }
 }
 
+.danny-tai-about-img {
+  align-self: flex-start;
+  margin-top: 104px;
+}
+
+@media (max-width: 991px) {
+  .danny-tai-about-img {
+    margin-top: 0;
+  }
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-form {
+  border: 1px solid #cbcbcb !important;
+  border-radius: 5px;
+}
+
+input.footer-form::placeholder,
+textarea.footer-form::placeholder {
+  color: #cbcbcb !important; /* Set the placeholder color */
+  opacity: 1 !important; /* Ensure full opacity */
+}
+
+input.footer-form:focus::placeholder,
+textarea.footer-form:focus::placeholder {
+  color: #cbcbcb !important; /* Ensure focus placeholder color */
+}
