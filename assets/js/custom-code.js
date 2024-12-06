@@ -9,7 +9,7 @@ fetch("data.json")
     data.forEach((item) => {
       // Create a column div for each card
       const colDiv = document.createElement("div");
-      colDiv.className = "col-md-6 col-lg-6 col-12 text-center";
+      colDiv.className = "col-md-6 col-lg-6 col-12 text-center mb-4";
 
       // Create the card structure
       const cardHtml = `
