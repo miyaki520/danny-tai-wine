@@ -2,19 +2,37 @@
   {
     "title": "Sourcing & Distribution",
     "description": "Delivering premium wines from trusted sources directly to your business.",
-    "pdf": "/assets/pdf/sample.pdf",
-    "image": "/assets/images/burg_life/image_1.jpg"
+    "pdf1": "/assets/pdf/sample.pdf",
+    "pdf2": "/assets/pdf/sample.pdf",
+    "image": "/assets/images/burg_life/image_1.jpg",
+    "btn1": "Portfolio",
+    "btn2": "Wine List"
   },
   {
     "title": "Dinner & Paring",
     "description": "Curated wine pairings to elevate your dining experience with perfection.",
-    "pdf": "/assets/pdf/sample.pdf",
-    "image": "/assets/images/burg_life/image_2.jpg"
+    "pdf1": "/assets/pdf/sample.pdf",
+    "pdf2": "/assets/pdf/sample.pdf",
+    "image": "/assets/images/burg_life/image_2.jpg",
+    "btn1": "Pairing Menu",
+    "btn2": "Dinner Wine Service"
   },
   {
     "title": "Talk & Masterclass",
     "description": "In-depth wine knowledge shared through engaging talks and immersive masterclasses.",
-    "pdf": "/assets/pdf/sample.pdf",
-    "image": "/assets/images/burg_life/image_3.jpg"
+    "pdf1": "/assets/pdf/sample.pdf",
+    "pdf2": "/assets/pdf/sample.pdf",
+    "image": "/assets/images/burg_life/image_3.jpg",
+    "btn1": "French Wine Intro",
+    "btn2": "Bourgogne Masterclass"
+  },
+  {
+    "title": "Wine Tour",
+    "description": "Experience Burgundy’s finest gastronomy & wine and breath-taking",
+    "pdf1": "/assets/pdf/sample.pdf",
+    "pdf12": "/assets/pdf/sample.pdf",
+    "image": "/assets/images/burg_life/image_4.jpg",
+    "btn1": "Winery & Vineyard",
+    "btn2": "Gastronomy & Wines"
   }
 ]
