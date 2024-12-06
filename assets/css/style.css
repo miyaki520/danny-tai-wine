@@ -6013,7 +6013,14 @@ a:active {
   overflow: hidden;
 }
 .portfolio-item .portfolio-thumb > img {
-  width: 100%;
+  max-width: 350px;
+  -webkit-transition: ease-in-out 0.4s;
+  transition: ease-in-out 0.4s;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.video-thumbnail {
+  max-width: 350px;
   -webkit-transition: ease-in-out 0.4s;
   transition: ease-in-out 0.4s;
   -o-object-fit: cover;
