@@ -5702,8 +5702,12 @@ a:active {
 .single-skill .skill-title {
   font-size: 16px;
   font-weight: 700;
-  color: #3d3d3d;
+  color: #800020;
   margin-bottom: 8px;
+}
+.single-skill .skill-title:hover {
+  color: #800020;
+  transform: scale(1.05);
 }
 @media (min-width: 1200px) {
   .single-skill .skill-title {
