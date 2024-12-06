@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "/assets/images/milestone/milestone_2.jpg",
       ];
       lightboxImg.src = images[index];
-      lightbox.style.display = "flex"; 
+      lightbox.style.display = "flex";
     });
   });
 });
@@ -131,11 +131,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "/assets/images/cert/cert-3-min.png",
       ];
       lightboxImg.src = images[index];
-      lightbox.style.display = "flex"; 
+      lightbox.style.display = "flex";
       lightboxImg.style.maxWidth = "800px";
       lightboxImg.style.maxHeight = "800px";
       lightboxImg.style.margin = "auto";
     });
+  });
+});
+
+// Lightbox in Gallery section
+document.querySelectorAll(".lightbox-trigger").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    const imgSrc = link.getAttribute("href");
+    lightboxImg.src = imgSrc;
+    lightbox.style.display = "flex";
+    lightboxImg.style.maxWidth = "800px";
+    lightboxImg.style.maxHeight = "800px";
+    lightboxImg.style.margin = "auto";
   });
 });
 
