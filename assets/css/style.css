@@ -9153,9 +9153,15 @@ textarea.footer-form:focus::placeholder {
 }
 
 .lightbox-img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 800px;
+  max-height: 800px;
   display: block;
+}
+
+.lightbox-video {
+  display: none;
+  width: 90vw;
+  height: 90vh;
 }
 
 .lightbox-close {

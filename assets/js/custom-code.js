@@ -106,6 +106,7 @@ document
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.querySelector(".lightbox-img");
 const lightboxClose = document.querySelector(".lightbox-close");
+const lightboxVideo = document.querySelector(".lightbox-video");
 
 // Lightbox in timeline section
 document.addEventListener("DOMContentLoaded", () => {
@@ -142,24 +143,39 @@ document.addEventListener("DOMContentLoaded", () => {
 // Lightbox in Gallery section
 document.querySelectorAll(".lightbox-trigger").forEach((link) => {
   link.addEventListener("click", (e) => {
-    e.preventDefault(); 
-    const imgSrc = link.getAttribute("href");
-    lightboxImg.src = imgSrc;
-    lightbox.style.display = "flex";
-    lightboxImg.style.maxWidth = "800px";
-    lightboxImg.style.maxHeight = "800px";
-    lightboxImg.style.margin = "auto";
+    e.preventDefault();
+
+    const imgSrc = link.getAttribute("href"); // Get the href (image or video URL)
+    const videoSrc = link.getAttribute("data-video"); // Get the data-video attribute
+
+    if (videoSrc) {
+      // Handle video
+      lightboxVideo.src = videoSrc; // Set the iframe src to the video URL
+      lightboxVideo.style.display = "block"; // Show the video
+      lightboxImg.style.display = "none"; // Hide the image
+    } else {
+      // Handle image
+      lightboxImg.src = imgSrc; // Set the image src
+      lightboxImg.style.display = "block"; // Show the image
+      lightboxVideo.style.display = "none"; // Hide the video
+    }
+
+    lightbox.style.display = "flex"; // Display the lightbox
   });
 });
 
-// Close lightbox on clicking the close button
+// Clear iframe source and hide lightbox on close
 lightboxClose.addEventListener("click", () => {
   lightbox.style.display = "none";
+  lightboxImg.src = ""; // Clear image src
+  lightboxVideo.src = ""; // Clear video src
 });
 
-// Close lightbox on clicking outside the image
+// Close lightbox on clicking outside the content
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     lightbox.style.display = "none";
+    lightboxImg.src = ""; // Clear image src
+    lightboxVideo.src = ""; // Clear video src
   }
 });
