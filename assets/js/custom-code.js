@@ -9,7 +9,7 @@ fetch("data.json")
     data.forEach((item) => {
       // Create a column div for each card
       const colDiv = document.createElement("div");
-      colDiv.className = "col-md-6 col-lg-4 col-12 text-center";
+      colDiv.className = "col-md-6 col-lg-6 col-12 text-center";
 
       // Create the card structure
       const cardHtml = `
@@ -18,7 +18,10 @@ fetch("data.json")
           <div class="card-body">
             <h5 class="card-title century-gothic-bold text-burgundy">${item.title}</h5>
             <p class="card-text">${item.description}</p>
-            <a href="${item.pdf}" class="btn btn-primary burg-life-btn rounded-3" target="_blank">View More</a>
+            <div class="d-flex gap-2 justify-content-center">
+              <a href="${item.pdf1}" class="btn btn-primary burg-life-btn rounded-3" target="_blank">${item.btn1}</a>
+              <a href="${item.pdf2}" class="btn btn-primary burg-life-btn rounded-3" target="_blank">${item.btn2}</a>
+            </div>
           </div>
         </div>
       `;
@@ -99,3 +102,51 @@ document
         formStatus.style.color = "red";
       });
   });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.querySelector(".lightbox-img");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+// Lightbox in timeline section
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".view-photo-btn").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const images = [
+        "/assets/images/milestone/milestone_1.jpg",
+        "/assets/images/milestone/milestone_2.jpg",
+      ];
+      lightboxImg.src = images[index];
+      lightbox.style.display = "flex"; 
+    });
+  });
+});
+
+// Lightbox in Qualification section
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".qualification-btn").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const images = [
+        "/assets/images/cert/cert-1-min.png",
+        "/assets/images/cert/cert-2-min.png",
+        "/assets/images/cert/cert-3-min.png",
+      ];
+      lightboxImg.src = images[index];
+      lightbox.style.display = "flex"; 
+      lightboxImg.style.maxWidth = "800px";
+      lightboxImg.style.maxHeight = "800px";
+      lightboxImg.style.margin = "auto";
+    });
+  });
+});
+
+// Close lightbox on clicking the close button
+lightboxClose.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Close lightbox on clicking outside the image
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
