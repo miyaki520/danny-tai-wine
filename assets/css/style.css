@@ -9157,6 +9157,7 @@ textarea.footer-form:focus::placeholder {
   z-index: 1000;
 }
 
+
 .lightbox-content {
   position: relative;
   max-width: 90%;
@@ -9167,6 +9168,18 @@ textarea.footer-form:focus::placeholder {
   max-width: 800px;
   max-height: 800px;
   display: block;
+}
+
+@media (max-width: 991px) {
+  .lightbox-img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .lightbox-img {
+    max-width: 100%;
+  }
 }
 
 .lightbox-video {
